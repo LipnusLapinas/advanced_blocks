@@ -1,9 +1,12 @@
-def bubble_sort(array)
+def bubble_sort(string)
+	array = string.split(" ")
 	i = 0
 	while i < array.size - 1 do
 		array.each_with_index do |value, index|
-			if (index + 2) != array.size do
-				if array[index] > array[index + 1] do
+			if (index + 1) == array.size
+				break
+			else
+				if array[index] > array[index + 1]
 					num = array[index]
 					array[index] = array[index + 1]
 					array[index + 1] = num
@@ -12,9 +15,10 @@ def bubble_sort(array)
 		end
 		i += 1
 	end
-	puts array
+	print array
+	print("\n")
 end
 
-puts("Array:" )
-array = gets.chomp
-bubble_sort(array)
+puts("Array: ")
+string = gets.chomp
+bubble_sort(string)
